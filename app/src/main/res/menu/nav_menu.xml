@@ -15,22 +15,18 @@
             android:icon="@drawable/ic_baseline_notes_24"
             android:title="Catatan Harian"/>
     </group>
-    <group>
-        <item android:title="info App">
-            <menu>
-                <item android:id="@+id/info"
-                    android:icon="@drawable/ic_baseline_info_24"
-                    android:title="Info App"/>
-            </menu>
-        </item>
-    </group>
-    <group>
-        <item android:title="Logout">
-            <menu>
-                <item android:id="@+id/logout"
-                    android:icon="@drawable/ic_baseline_logout_24"
-                    android:title="Logout"/>
-            </menu>
-        </item>
-    </group>
+    <item android:title="info App">
+        <menu>
+            <item android:id="@+id/info"
+                android:icon="@drawable/ic_baseline_info_24"
+                android:title="Info App"/>
+        </menu>
+    </item>
+    <item android:title="Logout">
+        <menu>
+            <item android:id="@+id/logout"
+                android:icon="@drawable/ic_baseline_logout_24"
+                android:title="Logout"/>
+        </menu>
+    </item>
 </menu>

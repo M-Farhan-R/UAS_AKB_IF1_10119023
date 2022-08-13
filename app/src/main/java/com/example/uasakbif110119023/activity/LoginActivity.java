@@ -41,11 +41,11 @@ public class LoginActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Keluar")
                 .setMessage("Mau keluar aplikasi?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finishAndRemoveTask();
+                        finishAffinity();
+                        System.exit(0);
                     }
                 })
                 .setNegativeButton(android.R.string.no, null).show();
@@ -77,25 +77,26 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals("") || password.equals("")){
                     Toast.makeText(LoginActivity.this,
                             "Isi Data terlebih dahulu",
-                            Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(LoginActivity.this,
                             "Logging in...",
-                            Toast.LENGTH_LONG).show();
-                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this,
-                            new OnCompleteListener<AuthResult>() {
+                            Toast.LENGTH_SHORT).show();
+                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
+                            LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                                     if (task.isSuccessful()) {
                                         Toast.makeText(LoginActivity.this,
                                                 "Login Berhasil",
-                                                Toast.LENGTH_LONG).show();
+                                                Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                         finish();
                                     } else {
                                         Toast.makeText(LoginActivity.this,
                                                 "Gagal Login",
-                                                Toast.LENGTH_LONG).show();
+                                                Toast.LENGTH_SHORT).show();
                                     }
 
                                 }

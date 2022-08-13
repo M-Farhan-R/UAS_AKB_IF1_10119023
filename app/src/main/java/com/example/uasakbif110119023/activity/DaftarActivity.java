@@ -58,7 +58,6 @@ public class DaftarActivity extends AppCompatActivity {
                                         Toast.makeText(DaftarActivity.this,
                                                 "Berhasil Daftar",
                                                 Toast.LENGTH_LONG).show();
-                                        onBackPressed();
                                         finish();
                                     } else {
                                         Toast.makeText(DaftarActivity.this,

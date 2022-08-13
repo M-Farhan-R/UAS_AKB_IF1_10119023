@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="Catatan Harian"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0"

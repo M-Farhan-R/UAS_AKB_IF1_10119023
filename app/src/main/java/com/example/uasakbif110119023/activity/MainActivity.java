@@ -20,7 +20,6 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.uasakbif110119023.R;
-import com.example.uasakbif110119023.db.DBHelper;
 import com.example.uasakbif110119023.fragment.CatatanFragment;
 import com.example.uasakbif110119023.fragment.InfoFragment;
 import com.example.uasakbif110119023.fragment.ProfileFragment;
@@ -44,11 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new CatatanFragment()).commit();
-        }
 
         auth = FirebaseAuth.getInstance();
         authListener = new FirebaseAuth.AuthStateListener() {
@@ -91,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.profile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ProfileFragment()).commit();
+                break;
             case R.id.catatan:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new CatatanFragment()).commit();
@@ -103,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 new AlertDialog.Builder(this)
                         .setTitle("Confirmation")
                         .setMessage("Ingin Log Out?")
-                        .setIcon(R.drawable.ic_logout)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -111,10 +108,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             }
                         })
                         .setNegativeButton(android.R.string.no, null).show();
-                break;
-            case R.id.profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
                 break;
 
         }
