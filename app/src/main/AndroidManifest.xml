@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nama: Muhammad Farhan R -->
+<!-- NIM : 10119023 -->
+<!-- Kelas : IF-1 -->
+<!-- tanggal : 11/08/2022 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.uasakbif110119023" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/sup_card_uma_frame"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/sup_card_uma_frame"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UASAKBIF110119023"
+        tools:targetApi="31" >
+        <activity
+            android:name=".activity.DaftarActivity"
+            android:exported="false"
+            android:label="Daftar"
+            android:parentActivityName=".activity.LoginActivity"/>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false"
+            android:label="Login"/>
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:label="@string/app_name"/>
+    </application>
+
+</manifest>

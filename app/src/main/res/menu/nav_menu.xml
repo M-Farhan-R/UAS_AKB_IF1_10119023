@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nama: Muhammad Farhan R -->
+<!-- NIM : 10119023 -->
+<!-- Kelas : IF-1 -->
+<!-- tanggal : 11/08/2022 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+        <item android:id="@+id/profile"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Profile"/>
+        <item android:id="@+id/catatan"
+            android:icon="@drawable/ic_baseline_notes_24"
+            android:title="Catatan Harian"/>
+    </group>
+    <group>
+        <item android:title="info App">
+            <menu>
+                <item android:id="@+id/info"
+                    android:icon="@drawable/ic_baseline_info_24"
+                    android:title="Info App"/>
+            </menu>
+        </item>
+    </group>
+    <group>
+        <item android:title="Logout">
+            <menu>
+                <item android:id="@+id/logout"
+                    android:icon="@drawable/ic_baseline_logout_24"
+                    android:title="Logout"/>
+            </menu>
+        </item>
+    </group>
+</menu>
